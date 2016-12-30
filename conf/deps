@@ -18,6 +18,22 @@ fn getnashlib() {
 	}
 }
 
+fn getnashcomplete() {
+	-test -d $NASHPATH+"/lib/nashcomplete"
+
+	if $status != "0" {
+		echo "[31m» nashcomplete not installed[0m"
+		echo "[32m» Trying to download dependencies...[0m"
+		-mkdir -p $NASHPATH+"/lib"
+
+		chdir($NASHPATH+"/lib")
+
+		git clone https://github.com/vitorarins/nashcomplete.git
+
+		chdir($HOME)
+	}
+}
+
 fn getfzf() {
 	-test -d $HOME+"/.fzf"
 
@@ -33,4 +49,5 @@ fn getfzf() {
 }
 
 getnashlib()
+getnashcomplete()
 getfzf()
