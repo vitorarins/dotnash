@@ -10,8 +10,14 @@ GOROOT           = $HOME+"/.gvm/gos/"+$GOVERSION
 GOROOT_BOOTSTRAP = $HOME+"/.gvm/gos/go1.4"
 CDPATH           = ($HOME $GOPATH+"/src")
 LANG             = "en_US.UTF-8"
-PATH             = ""
 SHELL            = $GOPATH+"/bin/nash"
+TERM             = "terminator"
+
+-test $PATH
+if $status != "0" {
+   PATH = ""
+}
+
 paths = (
 	"/bin"
 	"/sbin"
@@ -33,3 +39,4 @@ setenv SHELL
 setenv GOPATH
 setenv GOROOT
 setenv PATH
+setenv TERM
