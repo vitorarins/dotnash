@@ -12,8 +12,6 @@ fn gpull() {
 	git pull origin $branch
 }
 
-bindfn gpull gpull
-
 # gcheck is a helper for easy checkouts
 # If executed without passing a branch it will prompt for a list
 # of existing branches for checkout.
@@ -49,12 +47,8 @@ fn gcheck(branch) {
 	return $branch
 }
 
-bindfn gcheck gcheck
-
 fn gpush() {
 	branch <= gitbranch()
 
 	git push origin $branch
 }
-
-bindfn gpush gpush

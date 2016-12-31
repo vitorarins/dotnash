@@ -1,0 +1,10 @@
+# Execute this file with interactive mode (-i)
+
+bindfn gocd gocd
+bindfn gomk gomk
+bindfn gpull gpull
+bindfn gcheck gcheck
+bindfn gpush gpush
+bindfn ls lsa
+bindfn ll lash
+bindfn cd cd

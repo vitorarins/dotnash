@@ -45,5 +45,3 @@ fn cd(path) {
 
 	__docd($path)
 }
-
-bindfn cd cd
