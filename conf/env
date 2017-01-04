@@ -9,6 +9,7 @@ GOROOT           = "/usr/local/go"
 CDPATH           = ($HOME $GOPATH+"/src")
 LANG             = "en_US.UTF-8"
 SHELL            = $GOPATH+"/bin/nash"
+TERM		 = "screen"
 
 -test $PATH
 if $status != "0" {
@@ -33,6 +34,7 @@ for p in $paths {
 
 setenv LANG
 setenv SHELL
+setenv TERM
 setenv GOPATH
 setenv GOROOT
 setenv PATH
