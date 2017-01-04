@@ -7,3 +7,6 @@ fn ls() {
 fn lash() {
         ls --color=auto -lashF
 }
+
+bindfn ls lsa
+bindfn lash lash
