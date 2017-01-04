@@ -9,7 +9,7 @@ GOROOT           = "/usr/local/go"
 CDPATH           = ($HOME $GOPATH+"/src")
 LANG             = "en_US.UTF-8"
 SHELL            = $GOPATH+"/bin/nash"
-TERM		 = "screen"
+TERM		 = "xterm"
 
 -test $PATH
 if $status != "0" {
