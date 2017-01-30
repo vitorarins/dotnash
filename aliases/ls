@@ -1,12 +1,12 @@
 # ls alias
 
 fn ls() {
-        ls --color=auto -aF
+        ls -G -aF
 }
 
 fn lash() {
-        ls --color=auto -lashF
+        ls -G -lashF
 }
 
 bindfn ls lsa
-bindfn lash lash
+bindfn lash ll
