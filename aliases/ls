@@ -9,4 +9,4 @@ fn lash() {
 }
 
 bindfn ls lsa
-bindfn lash lash
+bindfn lash ll

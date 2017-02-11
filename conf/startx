@@ -1,0 +1,8 @@
+#!/usr/bin/env nash
+
+-test -n $DISPLAY
+if $status != "0" {
+    if $XDG_VTNR == "1" {
+        startx -- -keeptty
+    }
+}

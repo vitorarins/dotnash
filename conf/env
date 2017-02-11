@@ -8,6 +8,7 @@ LBIN             = $HOME+"/bin"
 FZFPATH          = $HOME+"/.fzf"
 GOROOT           = $HOME+"/.gvm/gos/"+$GOVERSION
 GOROOT_BOOTSTRAP = $HOME+"/.gvm/gos/go1.4"
+PERL_VENDOR      = "/usr/bin/vendor_perl"
 CDPATH           = ($HOME $GOPATH+"/src")
 LANG             = "en_US.UTF-8"
 SHELL            = $GOPATH+"/bin/nash"
@@ -27,6 +28,7 @@ paths = (
 	$GOROOT+"/bin"
 	$GOPATH+"/bin"
 	$FZFPATH+"/bin"
+        $PERL_VENDOR
 	$LBIN
 )
 
