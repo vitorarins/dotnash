@@ -1,0 +1,11 @@
+# docker rm -f $(docker ps -aq) alias
+
+fn rmdocker() {
+   rcids <= docker ps -aq
+   rcids <= split($rcids, "\n")
+   for i in $rcids {
+       docker rm -f $i
+   }
+}
+
+bindfn rmdocker dockerrm
