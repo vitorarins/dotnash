@@ -10,6 +10,7 @@ CDPATH           = ($HOME $GOPATH+"/src")
 LANG             = "en_US.UTF-8"
 SHELL            = $GOPATH+"/bin/nash"
 TERM		 = "xterm"
+NVM              = $HOME+"/.nvm"
 
 -test $PATH
 if $status != "0" {
@@ -25,6 +26,7 @@ paths = (
 	$GOROOT+"/bin"
 	$GOPATH+"/bin"
 	$FZFPATH+"/bin"
+	$NVM+"/bin"
 	$LBIN
 )
 
