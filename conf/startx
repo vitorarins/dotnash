@@ -1,8 +1,11 @@
 #!/usr/bin/env nash
 
--test -n $DISPLAY
-if $status != "0" {
-    if $XDG_VTNR == "1" {
-        startx -- -keeptty
+_, err <= test -n $DISPLAY
+if $err != "0" {
+    _, err <= test -n $XDG_VTNR
+    if $err == "0" {
+       if $XDG_VTNR == "1" {
+          startx -- -keeptty
+       }
     }
 }

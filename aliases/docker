@@ -1,5 +1,20 @@
-# docker rm -f $(docker ps -aq) alias
+# every docker alias
 
+# docker command to run itau with Guardiao
+fn itau(command) {
+   HOSTNAME <= hostname
+   KEY <= xauth list | grep $HOSTNAME | awk "{ print $3 }" | head -n 1
+   DCK_HOST="docker-itau"
+   xauth add $DCK_HOST+"/unix:0" . $KEY
+
+   if $command == "" {
+	docker run -it --rm --network "host" -e "XAUTHORITY=/tmp/.Xauthority" -e "DISPLAY=unix:0" -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/vitor/.Xauthority:/tmp/.Xauthority -v /dev/snd:/dev/snd -h docker-itau itau
+   } else {
+	docker run -it --rm --network host -e "XAUTHORITY=/tmp/.Xauthority" -e "DISPLAY=unix:0" -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/vitor/.Xauthority:/tmp/.Xauthority -v /dev/snd:/dev/snd -h docker-itau itau $command
+   }
+}
+
+# docker rm -f $(docker ps -aq) alias
 fn rmdocker() {
    rcids <= docker ps -aq
    rcids <= split($rcids, "\n")
@@ -9,3 +24,4 @@ fn rmdocker() {
 }
 
 bindfn rmdocker dockerrm
+bindfn itau itau
