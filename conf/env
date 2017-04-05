@@ -2,13 +2,10 @@
 
 IFS = ("\n")
 
-GOVERSION        = "go1.8"
 GOPATH           = $HOME+"/go"
 LBIN             = $HOME+"/bin"
 FZFPATH          = $HOME+"/.fzf"
-GVMPATH          = $HOME+"/.gvm"
-GOROOT           = $GVMPATH+"/gos/"+$GOVERSION
-GOROOT_BOOTSTRAP = $GVMPATH+"/gos/go1.4"
+GOROOT           = "/usr/local/go"
 PERL_VENDOR      = "/usr/bin/vendor_perl"
 CDPATH           = ($HOME $GOPATH+"/src")
 LANG             = "en_US.UTF-8"
@@ -25,7 +22,6 @@ paths = (
 	"/usr/sbin"
 	"/usr/local/bin"
 	$GOROOT+"/bin"
-	$GVMPATH+"/bin"
 	$GOPATH+"/bin"
 	$FZFPATH+"/bin"
 	$NVM+"/bin"
