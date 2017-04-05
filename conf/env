@@ -11,7 +11,6 @@ CDPATH           = ($HOME $GOPATH+"/src")
 LANG             = "en_US.UTF-8"
 SHELL            = $GOPATH+"/bin/nash"
 TERM		 = "xterm"
-NVM              = $HOME+"/.nvm"
 
 PATH = ""
 
@@ -24,7 +23,6 @@ paths = (
 	$GOROOT+"/bin"
 	$GOPATH+"/bin"
 	$FZFPATH+"/bin"
-	$NVM+"/bin"
         $PERL_VENDOR
 	$LBIN
 )
