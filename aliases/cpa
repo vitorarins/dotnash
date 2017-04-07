@@ -1,0 +1,11 @@
+# cp *
+
+fn cpa(destin) {
+   content <= ls
+   files <= split($content, "\n")
+   for f in $files {
+       cp -a $f $destin
+   }
+}
+
+bindfn cpa cpa
