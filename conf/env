@@ -11,6 +11,7 @@ CDPATH           = ($HOME $GOPATH+"/src")
 LANG             = "en_US.UTF-8"
 SHELL            = $GOPATH+"/bin/nash"
 TERM		 = "xterm"
+TERMINAL	 = "kitty"
 
 PATH = ""
 
@@ -34,6 +35,7 @@ for p in $paths {
 setenv LANG
 setenv SHELL
 setenv TERM
+setenv TERMINAL
 setenv GOPATH
 setenv GOROOT
 setenv PATH

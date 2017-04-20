@@ -6,6 +6,7 @@ bindfn gpull gpull
 bindfn gcheck gcheck
 bindfn gpush gpush
 bindfn ls lsa
-bindfn ll lash
+bindfn lash ll
 bindfn cd cd
 bindfn cpa cpa
+bindfn nashget nashget
