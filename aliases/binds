@@ -8,3 +8,4 @@ bindfn gpush gpush
 bindfn ls lsa
 bindfn ll lash
 bindfn cd cd
+bindfn cpa cpa
