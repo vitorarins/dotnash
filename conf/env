@@ -14,7 +14,7 @@ CDPATH           = ($HOME $GOPATH+"/src")
 LANG             = "en_US.UTF-8"
 SHELL            = $GOPATH+"/bin/nash"
 TERM		 = "xterm"
-NVM              = $HOME+"/.nvm"
+TERMINAL         = "kitty"
 
 PATH = ""
 
@@ -28,7 +28,6 @@ paths = (
 	$GVMPATH+"/bin"
 	$GOPATH+"/bin"
 	$FZFPATH+"/bin"
-	$NVM+"/bin"
         $PERL_VENDOR
 	$LBIN
 )
@@ -40,6 +39,7 @@ for p in $paths {
 setenv LANG
 setenv SHELL
 setenv TERM
+setenv TERMINAL
 setenv GOPATH
 setenv GOROOT
 setenv PATH

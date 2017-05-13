@@ -5,7 +5,7 @@ if $err != "0" {
     _, err <= test -n $XDG_VTNR
     if $err == "0" {
        if $XDG_VTNR == "1" {
-          startx -- -keeptty
+          startx -- -keeptty -nolisten tcp
        }
     }
 }
