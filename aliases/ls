@@ -4,8 +4,12 @@ fn ls() {
         ls --color=auto -aF
 }
 
-fn lash() {
-        ls --color=auto -lashF
+fn lash(path) {
+  if $path != "" {
+    ls --color=auto -lashF $path
+  } else {
+    ls --color=auto -lashF
+  }
 }
 
 bindfn ls lsa
