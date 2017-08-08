@@ -23,5 +23,15 @@ fn rmdocker() {
    }
 }
 
+# docker rmi -f $(docker images -q) alias
+fn rmidocker() {
+   imageids <= docker images -q
+   imageids <= split($imageids, "\n")
+   for i in $imageids {
+       docker rmi -f $i
+   }
+}
+
 bindfn rmdocker dockerrm
+bindfn rmidocker dockerrmi
 bindfn itau itau
