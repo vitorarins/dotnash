@@ -1,0 +1,9 @@
+# copy alias
+
+fn copy() {
+	content, _ <= head -n1 /dev/stdin
+
+	echo $content | xclip -selection clipboard
+}
+
+bindfn copy copy
