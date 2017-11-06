@@ -26,6 +26,7 @@ paths = (
 	$FZFPATH+"/bin"
         $PERL_VENDOR
 	$LBIN
+        $HOME+"/racket/bin"
 )
 
 for p in $paths {
