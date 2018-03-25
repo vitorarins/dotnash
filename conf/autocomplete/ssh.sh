@@ -2,17 +2,15 @@
 
 # The `parts` argument hold the line splited by space.
 fn ssh_complete(parts, line, pos) {
+	var ret = ()
 
-	ret = ()
-
-	choices <= awk "$1 == \"Host\" { host = $2; printf \"%s \", host; }" $HOME+"/.ssh/config"
-
-	choice <= (
+	var choices <= awk "$1 == \"Host\" { host = $2; printf \"%s \", host; }" $HOME+"/.ssh/config"
+	var choice, status <= (
 		echo $choices |
 		tr " " "\n" |
 		-fzf --header "SSH hosts: "
-						--reverse
-						 |
+					--reverse
+					 |
 		tr -d "\n"
 	)
 

@@ -2,23 +2,21 @@
 
 # PROMPT is a special variable used by nash command line to
 # setup your prompt.
-PROMPTSYM = "λ> "
-DEFPROMPT = $NASH_RED+$PROMPTSYM+$NASH_RESET
-PROMPT    = $DEFPROMPT
+var PROMPTSYM = "λ> "
+var DEFPROMPT = $NASH_RED+$PROMPTSYM+$NASH_RESET
 
-setenv PROMPT
+setenv PROMPT = $DEFPROMPT
 
 fn updatePrompt() {
 	PROMPT = $DEFPROMPT
-	IFS    = ""
 
-        GETCURDIR <= pwd | sed -e "s@"+$HOME+"@~@g"
-	CURDIR = $NASH_BLUE+$GETCURDIR+$NASH_RESET
+        var GETCURDIR <= pwd | sed -e "s@"+$HOME+"@~@g"
+	var CURDIR = $NASH_BLUE+$GETCURDIR+$NASH_RESET
 	
-	-test -d ./.git
+	var _, status <= test -d ./.git
 
 	if $status == "0" {
-		branch <= -git rev-parse --abbrev-ref HEAD >[2=]
+		var branch, status <= -git rev-parse --abbrev-ref HEAD >[2=]
 
 		if $status == "0" {
 			# workaround nash issue #96

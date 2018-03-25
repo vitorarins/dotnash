@@ -1,13 +1,13 @@
 # Git aliases
 
 fn gitbranch() {
-	branch <= git rev-parse --abbrev-ref HEAD | xargs echo -n
+	var branch <= git rev-parse --abbrev-ref HEAD
 
 	return $branch
 }
 
 fn gpull() {
-	branch <= gitbranch()
+	var branch <= gitbranch()
 
 	git pull origin $branch
 }
@@ -23,13 +23,13 @@ fn gcheck(branch) {
 		branch <= (
 			git branch |
 			sed "s/^[* \\t]*//g" |
-			fzf --header "Select the branch: " |
-			xargs echo -n
+			fzf --header "Select the branch: "
 		)
 
 		git checkout $branch
 	} else {
-		branchs <= git branch | sed "s/^[* \\t]*//g"
+		var branchs <= git branch | sed "s/^[* \\t]*//g"
+
 		branchs <= split($branchs, "\n")
 
 		for b in $branchs {
@@ -48,7 +48,7 @@ fn gcheck(branch) {
 }
 
 fn gpush() {
-	branch <= gitbranch()
+	var branch <= gitbranch()
 
 	git push origin $branch
 }

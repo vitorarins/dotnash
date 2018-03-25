@@ -1,4 +1,3 @@
-
 # import all my aliases
 
 import "cd"
@@ -8,3 +7,5 @@ import "githelpers"
 import "docker"
 import "cpa"
 import "copy"
+
+bindfn nashget nashget

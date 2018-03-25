@@ -1,6 +1,6 @@
 #!/usr/bin/env nash
 
-_, err <= test -n $DISPLAY
+var _, err <= test -n $DISPLAY
 if $err != "0" {
     _, err <= test -n $XDG_VTNR
     if $err == "0" {

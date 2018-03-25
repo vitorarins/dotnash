@@ -1,21 +1,19 @@
 # Setup environment variables
 
-IFS = ("\n")
+var GOPATH           = $HOME+"/go"
+var LBIN             = $HOME+"/bin"
+var FZFPATH          = $HOME+"/.fzf"
+var GOROOT           = $HOME+"/goroot"
+var PERL_VENDOR      = "/usr/bin/vendor_perl"
+var CDPATH           = ($HOME $GOPATH+"/src")
+var LANG             = "en_US.UTF-8"
+var SHELL            = $GOPATH+"/bin/nash"
+var TERM	     = "xterm"
+var TERMINAL         = "kitty"
 
-GOPATH           = $HOME+"/go"
-LBIN             = $HOME+"/bin"
-FZFPATH          = $HOME+"/.fzf"
-GOROOT           = $HOME+"/goroot"
-PERL_VENDOR      = "/usr/bin/vendor_perl"
-CDPATH           = ($HOME $GOPATH+"/src")
-LANG             = "en_US.UTF-8"
-SHELL            = $GOPATH+"/bin/nash"
-TERM		 = "xterm"
-TERMINAL         = "kitty"
+var PATH = ""
 
-PATH = ""
-
-paths = (
+var paths = (
 	"/bin"
 	"/sbin"
 	"/usr/bin"
@@ -26,11 +24,14 @@ paths = (
 	$FZFPATH+"/bin"
         $PERL_VENDOR
 	$LBIN
-        $HOME+"/racket/bin"
 )
 
 for p in $paths {
-	PATH = $PATH+":"+$p
+	if $PATH == "" {
+		PATH = $p
+	} else {
+		PATH = $PATH+":"+$p
+	}
 }
 
 setenv LANG
