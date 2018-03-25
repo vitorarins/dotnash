@@ -1,16 +1,21 @@
 # ls alias
 
 fn ls() {
-        ls --color=auto -aF
+	ls --color=auto -aF
 }
 
 fn lash(path) {
-  if $path != "" {
-    ls --color=auto -lashF $path
-  } else {
-    ls --color=auto -lashF
-  }
+	if $path != "" {
+		ls --color=auto -lashF $path
+	} else {
+		ls --color=auto -lashF
+	}
+}
+
+fn ll() {
+	ls --color=auto -lashF
 }
 
 bindfn ls lsa
-bindfn lash ll
+bindfn lash lash
+bindfn ll ll
