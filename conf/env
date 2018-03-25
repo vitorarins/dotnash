@@ -1,15 +1,18 @@
 # Setup environment variables
 
-var GOPATH           = $HOME+"/go"
-var LBIN             = $HOME+"/bin"
-var FZFPATH          = $HOME+"/.fzf"
-var GOROOT           = $HOME+"/goroot"
-var PERL_VENDOR      = "/usr/bin/vendor_perl"
-var CDPATH           = ($HOME $GOPATH+"/src")
-var LANG             = "en_US.UTF-8"
-var SHELL            = $GOPATH+"/bin/nash"
-var TERM	     = "xterm"
-var TERMINAL         = "kitty"
+var NASHPATH    = $HOME+"/.nash"
+var NASHROOT    = $HOME+"/nashroot"
+var GOPATH      = $HOME+"/go"
+var GOROOT      = $HOME+"/goroot"
+var LBIN        = $HOME+"/bin"
+var FZFPATH     = $HOME+"/.fzf"
+var PERL_VENDOR = "/usr/bin/vendor_perl"
+var CDPATH      = ($HOME $GOPATH+"/src")
+var LANG        = "en_US.UTF-8"
+var GCLOUDBIN  = $HOME+"/Downloads/google-cloud-sdk/bin"
+var SHELL       = $NASHROOT+"/bin/nash"
+var TERM	= "xterm"
+var TERMINAL    = "terminator"
 
 var PATH = ""
 
@@ -19,9 +22,11 @@ var paths = (
 	"/usr/bin"
 	"/usr/sbin"
 	"/usr/local/bin"
+        $NASHROOT+"/bin"
 	$GOROOT+"/bin"
 	$GOPATH+"/bin"
 	$FZFPATH+"/bin"
+        $GCLOUDBIN
         $PERL_VENDOR
 	$LBIN
 )
@@ -40,4 +45,6 @@ setenv TERM
 setenv TERMINAL
 setenv GOPATH
 setenv GOROOT
+setenv NASHPATH
+setenv NASHROOT
 setenv PATH
