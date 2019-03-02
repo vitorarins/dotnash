@@ -10,20 +10,16 @@ setenv PROMPT = $DEFPROMPT
 fn updatePrompt() {
 	PROMPT = $DEFPROMPT
 
-        var GETCURDIR <= pwd | sed -e "s@"+$HOME+"@~@g"
+	var GETCURDIR <= pwd | sed -e "s@"+$HOME+"@~@g"
+
 	var CURDIR = $NASH_BLUE+$GETCURDIR+$NASH_RESET
-	
+
 	var _, status <= test -d ./.git
 
 	if $status == "0" {
-		var branch, status <= -git rev-parse --abbrev-ref HEAD >[2=]
-
-		if $status == "0" {
-			# workaround nash issue #96
-			branch <= echo -n $branch | xargs echo -n
-
-			PROMPT = $NASH_GREEN+"git:("+$branch+")"+$NASH_RESET+$DEFPROMPT
-		}
+		var branch, status <= -git rev-parse --abbrev-ref HEAD >[2=] | xargs echo -n
+		
+		PROMPT = $NASH_GREEN+"git:("+$branch+")"+$NASH_RESET+$DEFPROMPT
 	} else {
 		PROMPT = $NASH_GREEN+"[«"+$NASH_RESET+$CURDIR+$NASH_GREEN+"»]"+$DEFPROMPT
 	}
