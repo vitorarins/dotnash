@@ -1,18 +1,20 @@
 # Setup environment variables
 
-var NASHPATH    = $HOME+"/.nash"
-var NASHROOT    = $HOME+"/nashroot"
-var GOPATH      = $HOME+"/go"
-var GOROOT      = $HOME+"/goroot"
-var LBIN        = $HOME+"/bin"
-var FZFPATH     = $HOME+"/.fzf"
-var PERL_VENDOR = "/usr/bin/vendor_perl"
-var CDPATH      = ($HOME $GOPATH+"/src")
-var LANG        = "en_US.UTF-8"
-var GCLOUDBIN  = $HOME+"/Downloads/google-cloud-sdk/bin"
-var SHELL       = $NASHROOT+"/bin/nash"
-var TERM	= "xterm"
-var TERMINAL    = "terminator"
+var NASHPATH      = $HOME+"/.nash"
+var NASHROOT      = $HOME+"/nashroot"
+var GOPATH        = $HOME+"/go"
+var GOROOT        = $HOME+"/goroot"
+var LBIN          = $HOME+"/bin"
+var FZFPATH       = $HOME+"/.fzf"
+var PERL_VENDOR   = "/usr/bin/vendor_perl"
+var CDPATH        = ($HOME $GOPATH+"/src")
+var LANG          = "en_US.UTF-8"
+var GCLOUDBIN     = $HOME+"/Downloads/google-cloud-sdk/bin"
+var SHELL         = $NASHROOT+"/bin/nash"
+var TERM	  = "xterm"
+var TERMINAL      = "terminator"
+var SSH_AUTH_SOCK = "/run/ssh-agent.socket"
+var KUBEBUILDER   = "/usr/local/kubebuilder"
 
 var PATH = ""
 
@@ -26,6 +28,7 @@ var paths = (
 	$GOROOT+"/bin"
 	$GOPATH+"/bin"
 	$FZFPATH+"/bin"
+	$KUBEBUILDER+"/bin"
         $GCLOUDBIN
         $PERL_VENDOR
 	$LBIN
@@ -48,3 +51,4 @@ setenv GOROOT
 setenv NASHPATH
 setenv NASHROOT
 setenv PATH
+setenv SSH_AUTH_SOCK
