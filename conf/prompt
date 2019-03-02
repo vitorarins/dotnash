@@ -22,7 +22,7 @@ fn updatePrompt() {
 			# workaround nash issue #96
 			branch <= echo -n $branch | xargs echo -n
 
-			PROMPT = $NASH_GREEN+"git:("+$branch+$NASH_RESET+")"+$DEFPROMPT
+			PROMPT = $NASH_GREEN+"git:("+$branch+")"+$NASH_RESET+$DEFPROMPT
 		}
 	} else {
 		PROMPT = $NASH_GREEN+"[«"+$NASH_RESET+$CURDIR+$NASH_GREEN+"»]"+$DEFPROMPT
